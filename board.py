@@ -76,7 +76,8 @@ def clavier(event):
             coords = (coords[0], coords[1])
         elif coords[0] > 20:
             coords = (coords[0]-40, coords[1])
-
+    elif touche == "q":
+        fenetre.destroy()
     # changement de coordonnées pour Mac gyver
     canvas.coords(gyver, coords[0], coords[1])
 
@@ -103,6 +104,7 @@ def get_random_position():
         return random_position+20
     else :
         return random_position
+    
      
 
 #bouteille ether
@@ -117,22 +119,6 @@ tube= canvas.create_image(get_random_position(),get_random_position(),image=tube
 
 
 
-
-
-
-
-
-
-######################
-# compteur/inventaire#
-######################
-
-inventaire = LabelFrame(fenetre, text="Inventaire", padx=10, pady=10)
-inventaire.pack(fill="both", expand="yes")
-Label(inventaire, text="Nombre d'objet +3").pack()
-fenetre.mainloop()
-
-
 #but du jeu brouillon 1 : atteindre Murdoc
 
 
@@ -145,8 +131,9 @@ fenetre.mainloop()
         # compteur/inventaire
 inventaire = LabelFrame(fenetre, text="Inventaire", padx=10, pady=10)
 inventaire.pack(fill="both", expand="yes")
-Label(inventaire, text="Aiguille : 0 - Tube : 0 - Ether : 0").pack()
+Label(inventaire, text="Aiguille : 0 - Tube : 0 - Ether : 0 \n Appuie sur la touche Q pour quitter").pack()
 fenetre.mainloop()
         #inscrire les trois objets dans le compteur
     #placer Mac gyver sur Murdock pour gagner
+
 
