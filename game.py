@@ -176,7 +176,10 @@ while continuer_partie:
                 print(maze)
                 print("Mac est sur la case (" + str(mac_coord1)+ "," + str(mac_coord2)+")")
                 print("Mac est sur la case TK (" + str(coords[0])+"," + str(coords[1])+")")
-                print(mac_coords)     
+                print(mac_coords)
+                if maze[(13,1)] == "mac" :
+                    continuer_partie = False
+                    fenetre.destroy()
                 
 
 
@@ -192,7 +195,10 @@ while continuer_partie:
                 print(maze)
                 print("Mac est sur la case (" + str(mac_coord1)+ "," + str(mac_coord2)+")")
                 print("Mac est sur la case TK (" + str(coords[0])+"," + str(coords[1])+")")
-                print(mac_coords)      
+                print(mac_coords)
+                if maze[(13,1)] == "mac" :
+                    continuer_partie = False
+                    fenetre.destroy()
                 
         elif touch == "Right" and mac_coord1 <= 13 and maze[(mac_coord1+1,mac_coord2)] != "wall" :
             if coords[0] == 580:
@@ -203,10 +209,14 @@ while continuer_partie:
                 maze[(mac_coord1+1,mac_coord2)] = "mac"
                 mac_coord1 = mac_coord1+1
                 mac_coords = (mac_coord1,mac_coord2)
+
                 print(maze)
                 print("Mac est sur la case (" + str(mac_coord1)+ "," + str(mac_coord2)+")")
                 print("Mac est sur la case TK (" + str(coords[0])+"," + str(coords[1])+")")
-                print(mac_coords) 
+                print(mac_coords)
+                if maze[(13,1)] == "mac" :
+                    continuer_partie = False
+                    fenetre.destroy()
 
         elif touch == "Left" and mac_coord1 >= 0 and maze[(mac_coord1-1,mac_coord2)] != "wall" :
             if coords[0] == 0:
@@ -217,10 +227,14 @@ while continuer_partie:
                 maze[(mac_coord1-1,mac_coord2)] = "mac"
                 mac_coord1 = mac_coord1-1
                 mac_coords = (mac_coord1,mac_coord2)
+
                 print(maze)
                 print("Mac est sur la case (" + str(mac_coord1)+ "," + str(mac_coord2)+")")
                 print("Mac est sur la case TK (" + str(coords[0])+"," + str(coords[1])+")")
-                print(mac_coords) 
+                print(mac_coords)
+                if maze[(13,1)] == "mac" :
+                    continuer_partie = False
+                    fenetre.destroy()
 
 
         elif touch == "q" :
