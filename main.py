@@ -50,15 +50,17 @@ maze[murdock_coords] = "murdock"
 #GRAPHICS with TKinter #
 ########################
 # creating the window
-fenetre = Tk()
-fenetre.title("Mac Gyver: The final escape")
+window = Tk()
+window.title("Mac Gyver: The final escape")
 
 # creating canvas
-canvas = Canvas(fenetre, width=600, height=600)
+canvas = Canvas(window, width=600, height=600)
+
+
 
 # creating floor's texture
-floor = PhotoImage(file="images/floor.gif")
 
+floor = PhotoImage(file="images/floor.gif")
 for coord_floor, value_floor in maze.items() :
     if value_floor == "free_space" or "ether" or "needle" or "tube":
         coord_x_floor, coord_y_floor = coord_floor
@@ -98,16 +100,7 @@ murdock = canvas.create_image(murdock_TK_coords,image=murdock_pic)
 
 
 
-##########
-#COUNTER #
-##########
 
-#creating and initializing the counter
-counter = 0
-# Vars for deleting the pictures'object after picking them up and count them in the counter
-needle_del = False
-tube_del = False
-ether_del = False
 
 
 
@@ -188,10 +181,12 @@ def keyboard_mac(event):
 # Events when Mac is meeting Murdock with or without objects
     if mac_coords == murdock_coords :
         if  counter == 3 :
-            continue_game = False
+            print(counter)
+
+
 
         else :
-            fenetre.destroy()
+            window.destroy()
 
 
 # Events when mac gyver is picking_up the 3 objects
@@ -216,22 +211,36 @@ def keyboard_mac(event):
 # initializing first position's coords of Mac in the window
 coords = mac_TK_coords
 
+
+##########
+#COUNTER #
+##########
+
+#creating and initializing the counter
+counter = 0
+# Vars for deleting the pictures'object after picking them up and count them in the counter
+needle_del = False
+tube_del = False
+ether_del = False
+
+inventory = LabelFrame(window, text="Inventory", padx=10, pady=10)
+inventory.pack(side=BOTTOM, fill="both", expand="yes")
+Label(inventory, text="inventaire :"+ str(counter) + "\n Appuie sur la touche Q pour quitter").pack()
+
+
 # add moves when touching the keyboard
 canvas.focus_set()
 canvas.bind("<Key>", keyboard_mac)
 canvas.pack()
-fenetre.mainloop()
 
 
 
 
 
 
-##inventaire = LabelFrame(fenetre, text="Inventaire", padx=10, pady=10)
-##inventaire.pack(fill="both", expand="yes")
-##Label(inventaire, text="Aiguille : 0 - Tube : 0 - Ether : 0 \n Appuie sur la touche Q pour quitter").pack()
 
-#
+
+window.mainloop()
 ################################
 ##    print(maze)
 ##    direction = input("quelle direction ?")

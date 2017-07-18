@@ -2,7 +2,7 @@
 # coding: utf-8
 from random import randrange
 from tkinter import PhotoImage
-from import_maze import maze as maze
+from import_maze import maze
 
 
 
@@ -20,7 +20,7 @@ class Tool:
         while new_random_coords:
             coord1 = self.get_random_position()
             coord2 = self.get_random_position()
-            if maze[(coord1,coord2)] == "free_space":
+            if maze[(coord1,coord2)] != "wall" and (coord1,coord2) != (13,13) and (coord1,coord2) != (0,1) :
                 new_random_coords = False
                 return (coord1,coord2)
             else:
