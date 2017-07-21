@@ -9,13 +9,18 @@ class Character:
         self.can_move = can_move
             
 
-    def coords(self):
+    def coords_and_pic(self):
         if self.can_move == True:
-            return (0,1)
+            coords = (0,1)
+            TK_coords = [(0*40+20),(1*40+20)]
+            photo = PhotoImage(file="images/"+str(self.name)+".png")
+            return coords, TK_coords, photo
         else:
-            return (13,13)
-    def picture(self):
-        return PhotoImage(file="images/"+str(self.name)+".png")
+            coords = (13,13)
+            TK_coords = [(13*40+20),(13*40+20)]
+            photo = PhotoImage(file="images/"+str(self.name)+".png")
+            return coords, TK_coords, photo
+
          
 
 

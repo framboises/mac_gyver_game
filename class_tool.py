@@ -10,23 +10,36 @@ from import_maze import maze
 class Tool:
     def __init__(self, name):
         self.name = name
+        
             
     def get_random_position(self):
         random_position = randrange(0,14)
         return random_position
             
-    def coords(self):
+    def coords_and_pic(self):
+        
         new_random_coords = True
         while new_random_coords:
-            coord1 = self.get_random_position()
-            coord2 = self.get_random_position()
-            if maze[(coord1,coord2)] != "wall" and (coord1,coord2) != (13,13) and (coord1,coord2) != (0,1) :
+            coords = (self.get_random_position(),self.get_random_position())
+            coord1, coord2 = coords
+            TK_coords = [(coord1*40+20),((coord2)*40+20)]
+            
+            photo = PhotoImage(file="images/"+str(self.name)+".png")
+            
+                                               
+            if maze[coords] != "wall" and (coord1,coord2) != (13,13) and (coord1,coord2) != (0,1) :
                 new_random_coords = False
-                return (coord1,coord2)
+                
+                
+                return coords, coord1, coord2, TK_coords, photo
             else:
                 pass
-    def picture(self):
-        return PhotoImage(file="images/"+str(self.name)+".png")
+
+            
+
+
+
+    
 
 
 
