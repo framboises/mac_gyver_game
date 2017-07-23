@@ -27,7 +27,7 @@ class Tool:
             photo = PhotoImage(file="images/"+str(self.name)+".png")
             
                                                
-            if maze[coords] != "wall" and (coord1,coord2) != (13,13) and (coord1,coord2) != (0,1) :
+            if maze[coords] == "free_space" and (coord1,coord2) != (13,13) and (coord1,coord2) != (0,1) :
                 new_random_coords = False
                 
                 
