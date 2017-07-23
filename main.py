@@ -1,5 +1,5 @@
-#! /usr/bin/env python3
-# coding: utf-8
+#!/usr/bin/env python3
+#-*- coding: utf-8 -*-
 import os
 from tkinter import *
 import class_tool as tool
@@ -164,4 +164,5 @@ while continue_game :
 
     canvas.pack()
     window.mainloop()
+    os.system("pause")
 
