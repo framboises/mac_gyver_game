@@ -6,6 +6,10 @@ import class_tool as tool
 import class_character as char
 from import_maze import maze
 
+""" The core of the game. This file create a graphic canvas with Tkinter.
+and define conditions to win or lose the game.
+"""
+
 #Condition to continue the game
 continue_game = True
 while continue_game :

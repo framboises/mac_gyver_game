@@ -1,7 +1,13 @@
 #!/usr/bin/env python3
 #-*- coding: utf-8 -*-
+""" This script is written to get a csv file, parse it and transform the values in a dictionnary
+"""
+
+
 import os
 import csv
+
+
 
 def parse_level(maze_file):
     directory = os.path.dirname(__file__) # we get the right path.

@@ -4,6 +4,10 @@ from random import randrange
 from tkinter import PhotoImage
 from import_maze import maze
 
+""" Class for the three tools in the game. It gives them random coords
+for the dictionnary maze and for the tkinter canvas. It also provides
+them a picture
+"""
 
 
 #Class for  the three random items

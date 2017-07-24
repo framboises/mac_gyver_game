@@ -2,6 +2,12 @@
 #-*- coding: utf-8 -*-
 from tkinter import PhotoImage
 
+""" Class for the two characters in the game. It gives them coords
+for the dictionnary maze and for the tkinter canvas. It also provides
+them a picture and if they can move in the maze. Then it provides them
+a function to react when the user press the keyboard
+"""
+
 #Class for  Mac et Murdock
 class Character:
     def __init__(self, name, can_move) :
